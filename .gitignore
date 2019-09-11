@@ -1,0 +1,15 @@
+lex.yy.c
+y.tab.h
+y.tab.c
+y.output
+*.log
+*.aux
+*.out
+*.snm
+*.toc
+*.vrb
+*.dvi
+*.nav
+core
+a.out
+.*.swp
