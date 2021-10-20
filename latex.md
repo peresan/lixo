@@ -20,3 +20,12 @@ autoNumber: "AMS"
 
 we would write \\[ a^2 = b^2 + c^2 \\]
 
+
+
+
+$ a^2 = b^2 $
+
+we would write $$ a^2 = b^2 + c^2 $$
+
+
+
