@@ -5,7 +5,7 @@ title: |
     Controlo de versões com git
 ---
 
-![image](octocat.jpg){height="50mm"}
+![image](octocat.jpg)
 Configuração
 ============
 
@@ -187,9 +187,9 @@ apontar para **master** em certas alturas. A `HEAD` é a minha posição
 atual, enquanto o **master** representa a linha principal de
 desenvolvimento, aquela onde os restantes utilizadores estão ligados. Se
 devido a alterações de outros utlizadores, ou por distração, o
-**master** ficar perdido no meio do grafo, pode ser puxado com git
-checkout master seguido de *merge* para a *versão* pretendida git merge
-versão. Se o **master** estiver na mesma linha de desenvolvimento do
+**master** ficar perdido no meio do grafo, pode ser puxado com `git
+checkout master` seguido de *merge* para a *versão* pretendida `git merge
+versão`. Se o **master** estiver na mesma linha de desenvolvimento do
 local de destino, não são necessárias alterações, logo não é necessário
 nenhum **commit**, e designa-se por *fast-forward merge*.
 
@@ -289,6 +289,13 @@ O **git** associa ao URL remoto um nome simbólico, mais simples que um
 endereço completo, frequentemente designado por **origin** (ver `git
 remote`).
 
+Para criar os repositórios remotos pode usar o *browser* com a sua conta em
+```
+https://git.rnl.tecnico.ulisboa.pt/ist1xxxxx
+```
+onde `xxxxx`é o seu número mecanográfico do *IST*, utilizando a password
+do *fénix* na identificação.
+
 Os primeiros passos
 -------------------
 
@@ -335,7 +342,7 @@ enviadas separadamente:
 ```
 
 Caso se pretenda efetuar o acesso com **ssh** em vez de **https**, os
-endereços devem ser substituídos por git@github.com:user/repo.git,
+endereços devem ser substituídos por `git@github.com:user/repo.git`,
 embora necessite da chave SSH em ambos os casos.
 
 Merge remoto
@@ -356,12 +363,6 @@ problemas cada uma por si só.
 Notar que dois utilizadores pode referir-se a um só utilizador em duas
 máquinas distintas, por exemplo um computador fixo e um portátil
 (ou telemóvel).
-Para criar os repositórios remotos pode usar o *browser* com a sua conta em
-```
-https://git.rnl.tecnico.ulisboa.pt/ist1xxxxx
-```
-onde `xxxxx`é o seu número mecanográfico do *IST*, utilizando a password
-do *fénix* na identificação.
 
 Consideremos que dois utilizadores (**a** e **B**) obtêm cópias de um
 mesmo repositório:
@@ -424,36 +425,9 @@ alterações.
 ```
 
 Caso as alterações sejam noutros ficheiros ou zonas de código, o comando
-git pull já consegue fazer a união (*merge*) das duas versões sem
+`git pull` já consegue fazer a união (*merge*) das duas versões sem
 conflitos, pelo que basta enviar o código resultante para o servidor:
-git push. Notar que antes de fazer qualquer git push deve testar o
-código a enviar, por exemplo mvn test. Também depois de fazer um *merge*
+`git push`. Notar que antes de fazer qualquer `git push` deve testar o
+código a enviar. Também depois de fazer um *merge*
 ou *rebase*, mesmo que não ocorram conflitos, deve testar se o código
 resultante da união ainda funciona.
-
-Ramos remotos
--------------
-
-Em **git** os ramos (*branches*) são pouco pesados, pois apenas é
-armazenada a referência para a salvaguarda (*commit*). Quando é efetuada
-a salvaguarda, esta fica associada ao ramo corrente.
-
-O comando git branch permite saber qual o ramo atual. Para criar um novo
-ramo basta indicar o nome pretendido: git branch ramo. O comando git
-checkout ramo permite tornar este ramo corrente.
-
-Depois de efetuadas alterações no ramo, caso se pretenda unir as
-alterações ao ramo principal (master), deve-se ir para master (git
-checkout master) e incorporar as alterações do ramo em master (git merge
-ramo).
-
-Para integrar com o código do servidor é necessário ir buscá-lo com git
-pull, agora sem a opção --rebase. Caso surjam conflitos, é necessário
-resolvê-los e depois enviar as alterações para o servidor: git push -u
-origin master
-
-Se as alterações introduzidas forem problemáticas então pode-se efetuar
-na inteface gráfica *web* do servidor um *pull request* (em linguagem
-**github**), ou *merge request* (em linguagem **gitlab**), para envolver
-os restantes membros da equipa na aceitação das soluções encontradas
-para os conflitos.
