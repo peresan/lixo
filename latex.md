@@ -20,8 +20,10 @@ autoNumber: "AMS"
 
 we would write \\[ a^2 = b^2 + c^2 \\]
 
+[comment]: # (This actually is the most platform independent comment)
 
 
+a^2^ = b^2^
 
 $ a^2 = b^2 $
 
