@@ -22,6 +22,12 @@ we would write \\[ a^2 = b^2 + c^2 \\]
 
 [comment]: # (This actually is the most platform independent comment)
 
+```r
+def fact(x) :
+	if x < 3 :
+		return x
+	return x * fact(x-1)
+```
 
 a^2^ = b^2^
 
