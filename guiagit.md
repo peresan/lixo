@@ -199,8 +199,7 @@ ser úteis, independentemente do número de salvaguardas efetuadas no
 ramo. O comando **branch** e o respetivo **checkout** podem ser
 condensados, e a versão de partida omitida for `HEAD`, em
 `git checkout -b first\_fork`.
-
-\small
+```
      cat file.txt 
      git checkout 3c78a9e
      cat file.txt 
@@ -210,13 +209,16 @@ condensados, e a versão de partida omitida for `HEAD`, em
      git add file.txt
      git commit -m first_fork # SHA-1 = 4ffd0ea
      git log --graph --oneline --decorate --all
+```
 
 Com a introdução do desenvolvimento paralelo, a opção `--graph` do comando
 **log** permite ter uma representação rudimentar do grafo de versões no
 repositório. Para simplificar a invocação deste comando para **git
 graph**, incluir-se na secção do ficheiro de configuração `~/.gitconfig`
 a definição\
-`graph = !"git log --graph --oneline --decorate --all"`
+```
+graph = !"git log --graph --oneline --decorate --all"
+```
 
 Caso o trabalho desenvolvido no ramo seja positivo deve ser integrado na
 linha principal de desenvolvimento (**master**). Os ramos que não
@@ -280,7 +282,7 @@ URL, podendo ser acedidos por **https** ou **ssh**, por exemplo:
 ```
 https://github.com/user/repo.git
 
-git\@github.com:user/repo.git
+git@github.com:user/repo.git
 ```
 
 O **git** associa ao URL remoto um nome simbólico, mais simples que um
@@ -333,7 +335,7 @@ enviadas separadamente:
 ```
 
 Caso se pretenda efetuar o acesso com **ssh** em vez de **https**, os
-endereços devem ser substituídos por git\@github.com:user/repo.git,
+endereços devem ser substituídos por git@github.com:user/repo.git,
 embora necessite da chave SSH em ambos os casos.
 
 Merge remoto
